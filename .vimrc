@@ -12,13 +12,11 @@
 "
 set nocompatible              " be iMproved, required
 let g:gmi#ignored_filetypes = ['help', 'qf', 'nerdtree', 'fzf']
-let g:GIT_SSL_NO_VERIFY=v:true
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  --insecure https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
-let g:GIT_SSL_NO_VERIFY=v:false
 call plug#begin('~/.vim/bundle')
 Plug 'ThanhKhoaIT/git-message.vim'
 Plug 'tmhedberg/SimpylFold'
